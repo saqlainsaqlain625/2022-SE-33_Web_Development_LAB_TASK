@@ -9,5 +9,6 @@ This lab task involves creating a structured HTML layout using various HTML elem
 
 ## 🌐 Live Preview  
 You can view the live version of this lab task here:  
-👉 [Click to View Lab Task 02](https://raw.githack.com/saqlainsaqlain625/2022-SE-33_Web_Development_LAB_TASK/main/Lab%20Task%2002/2022-SE-33_Lab_Task_02_WD.html)
+🔗 [Live Preview - Lab Task 02](https://raw.githack.com/saqlainsaqlain625/2022-SE-33_Web_Development_LAB_TASK/main/Lab%20Task%2002/2022-SE-33_Lab_Task_02_WD.html)
+
 

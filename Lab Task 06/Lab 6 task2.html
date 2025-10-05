@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Shape</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            position: relative;
+            width: 40vw; 
+            height: 50vh;
+        }
+
+        .shape {
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            top: 0;
+            left: 0;
+            background-color: red;
+            border-radius: 0; 
+            animation: shapeAnimation 6s infinite forwards alternate-reverse; 
+            transition: all 0.4s ease-in-out; 
+        }
+
+        @keyframes shapeAnimation {
+            0% {
+                background-color: red;
+                border-radius: 0;
+                top: 0;
+                left: 0;
+            }
+
+            25% {
+                background-color: blue;
+                border-radius: 50%;
+                top: 0;
+                left: calc(100% - 100px); 
+            }
+
+            50% {
+                background-color: #8B0000; 
+                border-radius: 50px; 
+                top: calc(100% - 100px);
+                left: calc(100% - 100px);
+            }
+            
+            75% {
+                background-color: #D2B48C; 
+                border-radius: 25px;
+                top: calc(100% - 100px);
+                left: 0;
+            }
+            
+            100% {
+                background-color: green;
+                border-radius: 0; 
+                top: 0;
+                left: 0;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="shape"></div>
+    </div>
+</body>
+</html>

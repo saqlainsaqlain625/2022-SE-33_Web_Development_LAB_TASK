@@ -1,0 +1,304 @@
+:root {
+      --brand-gold: #b8873d;   /* change to match your design */
+      --top-dark: #2c2c2c;
+    }
+/* Promo bar */
+    .promo {
+         background: var(--brand-gold); color: #fff;
+         font-size: 1.2rem; padding-top: 5px;}
+         
+    .promo a { color: #fff; text-decoration: underline;
+       font-size: 1.2rem;   /* default se thoda bara */
+       font-weight: bold; }
+/* utility top bar */
+    .utility { background: var(--top-dark); color:#fff; font-size: .9rem; }
+.site-logo img { max-height: 25px; width: auto; display:block; }
+    .search-group { max-width: 800px; width: 100%;padding-left: 100px;}
+    .btn-search { background: var(--brand-gold); border: none; color:#fff; }
+    .btn-search:active, .btn-search:focus { box-shadow: none; }
+
+    /* header icons */
+    .icon-btn { font-size: 1.25rem; color:#222; }
+    .badge-gold { background: var(--brand-gold); color:#fff; border-radius: 0.6rem; padding: .2rem .45rem; font-size:.75rem; }
+ /* nav style */
+    .main-nav .nav-link { font-weight:600; letter-spacing:.02em; color:#222; }
+    .main-nav .nav-link:hover { color:var(--brand-gold); }
+
+    /* shop filter bar */
+    .filter-bar { border:1px solid #e6e6e6; border-radius:6px; padding:12px; }
+    .display-toggle .btn { border:1px solid transparent; }
+    .display-toggle .btn.active { background:#f7f7f7; border-color:#ddd; }
+    /* ensure promo / headers don't overlap other content */
+    .promo, .utility, header, nav { z-index: 1030; }
+
+
+   /* IMG of product 01 */
+   /* ---------- Product Hover (smooth, no jitter) ---------- */
+.product-card { border: 0; }
+
+.product-media{
+  position: relative;
+  overflow: hidden;
+  /* same height for all thumbs; change if you want rectangle */
+  aspect-ratio: 1 / 1;
+  background: #f8f8f8;
+}
+
+/* Base + Hover images stacked */
+.product-media img{
+  position: absolute;
+  inset: 0;                 /* top:0 right:0 bottom:0 left:0 */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  will-change: transform;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+}
+
+.product-media .base-img{
+  transform: translateY(0);     /* default visible */
+  transition: transform .45s cubic-bezier(.22,.61,.36,1);
+}
+
+.product-media .hover-img{
+  transform: translateY(100%);  /* hidden below */
+  transition: transform .45s cubic-bezier(.22,.61,.36,1);
+}
+
+/* On hover: new image slides up; base stays (or slight parallax) */
+.product-card:hover .product-media .hover-img{
+  transform: translateY(0);
+}
+/* Optional subtle parallax on base image; set to 0 if not needed */
+.product-card:hover .product-media .base-img{
+  transform: translateY(-5%);
+}
+
+/* Overlay bar that slides up from bottom */
+.product-overlay{
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  padding: 12px;
+  background: rgba(0,0,0,.55);
+  transform: translateY(100%);  /* hidden below */
+  opacity: 0;
+  will-change: transform, opacity;
+  transition: transform .35s ease, opacity .35s ease;
+  pointer-events: none;         /* prevents hover flicker */
+}
+
+.product-card:hover .product-overlay{
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* Actions inside overlay */
+.product-actions{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: .5rem;
+  pointer-events: auto;         /* re-enable clicks on children */
+}
+
+/* Buttons / icons */
+.product-actions .btn-add{
+  padding: .35rem .65rem;
+  font-size: .85rem;
+  border-radius: 999px;
+}
+
+.product-actions .btn-icon{
+  width: 34px; height: 34px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: 1px solid rgba(255,255,255,.6);
+  color: #fff;
+  transition: transform .1s ease, background .1s ease, color .1s ease;
+}
+
+.product-actions .btn-icon:hover{
+  background: #fff;
+  color: #222;
+  transform: translateY(-2px);
+}
+
+/* (Optional) remove any unintended transitions on overlay children */
+.product-overlay .btn,
+.product-overlay .btn-icon { transition-property: transform, background, color; }
+
+
+/* Showing 1-1 */
+/* ---------- Results & Pagination ---------- */
+.results-pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 10px 20px;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+}
+
+.results-info p {
+  font-size: 14px;
+  color: #444;
+}
+
+.pagination a {
+  text-decoration: none;
+  color: #444;
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  margin: 0 3px;
+  font-size: 14px;
+}
+
+.pagination a.active {
+  background: #a1742f; /* Golden */
+  color: white;
+  border-color: #a1742f;
+}
+
+.pagination a:hover {
+  background: #444;
+  color: white;
+}
+
+/* ---------- Newsletter ---------- */
+.newsletter {
+  background: #f8f8f8;
+  padding: 40px 20px;
+  margin-top: 30px;
+  padding-bottom: 300px;
+}
+
+.newsletter-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.newsletter-text h2 {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.newsletter-text p {
+  color: #555;
+  font-size: 14px;
+}
+
+.newsletter-form {
+  display: flex;
+  align-items: center;
+  margin-top: 15px;
+}
+
+.newsletter-form input {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-right: none;
+  outline: none;
+  width: 250px;
+}
+
+.newsletter-form button {
+  background: #a1742f;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.newsletter-form button:hover {
+  background: #7a5520;
+}
+
+
+
+/* ----------------------------------------------------------------------- */
+/* Price detail */
+  .old-price {
+    color: #999; /* gray for old price */
+  }
+  .new-price {
+    color: #b8873d; /* gold for new price */
+  }
+
+
+  /* footer    )(())( */
+  .footer {
+  background: #f8f9fa; /* light grey like screenshot */
+  padding: 40px 20px 20px;
+  font-family: Arial, sans-serif;
+  border-top: 1px solid #ddd;
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-column h4 {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-column ul li {
+  margin-bottom: 10px;
+}
+
+.footer-column ul li a {
+  text-decoration: none;
+  color: #333;
+  font-size: 14px;
+}
+
+.footer-column ul li a:hover {
+  color: #a1742f; /* golden hover like design */
+}
+
+.footer-logo {
+  width: 120px;
+  margin: 10px 0;
+}
+
+.footer p {
+  font-size: 14px;
+  margin: 5px 0;
+  color: #333;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 30px;
+  padding-top: 15px;
+  border-top: 1px solid #ddd;
+  font-size: 14px;
+  color: #555;
+}
+
+
+
+

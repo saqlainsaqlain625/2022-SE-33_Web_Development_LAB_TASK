@@ -55,7 +55,7 @@ Lab Task 11/
    cd 2022-SE-33_Web_Development_LAB_TASK/Lab\ Task\ 11
    ```
 
-3. Open the HTML file in your browser (e.g.http://localhost:8000/index.php).
+3. Open the HTML file in your browser (e.g.http://localhost/Task11/index.php).
    You can simply double-click it or launch via a local web server:
 
 
@@ -67,3 +67,4 @@ Lab Task 11/
 - 📍 Skardu, Pakistan  
 - 📧 [saqlain.mushtaqbalti@gmail.com](mailto:saqlain.mushtaqbalti@gmail.com)  
 - 📱 0340-5699216  
+

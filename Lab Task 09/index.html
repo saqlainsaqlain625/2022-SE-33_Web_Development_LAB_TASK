@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form with JS</title>
+    <link rel="stylesheet" href="./styles/style.css">
+  </head>
+  <body>
+    <div class="container">
+      <form id="myForm" action="/submit" method="post">
+        <div>
+          <label for="fname">First Name:</label>
+          <input type="text" id="fname" name="FirstName" required>
+        </div>
+        <div>
+          <label for="lname">Last Name:</label>
+          <input type="text" id="lname" name="LastName" required>
+        </div>
+        <div>
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="Email" required>
+        </div>
+        <div>
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="Password"
+            required>
+        </div>
+        <div>
+          <label for="confirmpswd">Confirm Password:</label>
+          <input type="password" id="confirmpswd"
+            name="ConfirmPassword" required>
+        </div>
+        <div>
+          <label for="phno">Phone Number:</label>
+          <input type="tel" id="phno" name="PhoneNumber" required>
+        </div>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+
+    <script>
+    document.getElementById("myForm").addEventListener("submit", function (e) {
+      e.preventDefault(); // prevent form from submitting until validation passes
+
+      let fname = document.getElementById("fname").value.trim();
+      let lname = document.getElementById("lname").value.trim();
+      let email = document.getElementById("email").value.trim();
+      let password = document.getElementById("password").value.trim();
+      let confirmpswd = document.getElementById("confirmpswd").value.trim();
+      let phno = document.getElementById("phno").value.trim();
+
+      // Name validation (3–10 chars)
+      let nameRegex = /^[A-Za-z]{3,10}$/;
+      if (!nameRegex.test(fname)) {
+        alert("First name must be between 3 and 10 alphabetic characters.");
+        return;
+      }
+      if (!nameRegex.test(lname)) {
+        alert("Last name must be between 3 and 10 alphabetic characters.");
+        return;
+      }
+
+      // Email validation
+      let emailRegex = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+      if (!emailRegex.test(email)) {
+        alert("Please enter a valid email address.");
+        return;
+      }
+
+      // Password validation (1 digit, 1 uppercase, 1 special char, min 8 chars)
+      let passwordRegex = /^(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{8,}$/;
+      if (!passwordRegex.test(password)) {
+        alert("Password must be at least 8 characters long, include 1 uppercase letter, 1 digit, and 1 special character.");
+        return;
+      }
+
+      // Confirm password
+      if (password !== confirmpswd) {
+        alert("Passwords do not match!");
+        return;
+      }
+
+      // Pakistani phone validation (+923001234567 or 03001234567)
+      let phoneRegex = /^(\+92|0)3\d{9}$/;
+      if (!phoneRegex.test(phno)) {
+        alert("Phone number must be a valid Pakistani number (e.g., 03001234567 or +923001234567).");
+        return;
+      }
+
+      // If all validations pass
+      alert("Form submitted successfully!");
+      this.submit(); // finally submit form
+    });
+  </script>
+  </body>
+</html>

@@ -47,10 +47,11 @@ Lab Task 06/
    cd 2022-SE-33_Web_Development_LAB_TASK/Lab\ Task\ 06
    ```
 
-3.Open either HTML file in your browser:
-Lab\ 6\ task1.html
-# or
-Lab\ 6\ task2.html
+3. Open either HTML file in your browser:
+   ```bash
+   Lab\ 6\ task1.html
+   Lab\ 6\ task2.html
+   ```
 
 
 ### ✍️ Author

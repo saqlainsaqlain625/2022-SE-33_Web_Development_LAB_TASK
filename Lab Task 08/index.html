@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Blog Post</title>
+    <link rel="stylesheet" href="./styles/style.css">
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <h1>Dynamic Blog Post</h1>
+      <div class="search-bar">
+        <input type="text" id="search" placeholder=" Search posts...">
+        <button id="toggleDark" class="toggle-btn">🌙</button>
+      </div>
+    </header>
+
+    <!-- Controls -->
+    <div class="controls">
+      <button onclick="filterCategory('All')">All</button>
+      <button onclick="filterCategory('Technology')">Technology</button>
+      <button onclick="filterCategory('Travel')">Travel</button>
+      <button onclick="filterCategory('Coding')">Coding</button>
+      <button onclick="filterCategory('Health')">Health</button>
+      <select id="sortSelect">
+        <option value>Sort By</option>
+        <option value="title">Title (A-Z)</option>
+        <option value="id">Post ID (Low→High)</option>
+      </select>
+    </div>
+
+    <!-- Posts -->
+    <div class="container" id="blog-container"></div>
+
+    <!-- Pagination -->
+    <div class="pagination">
+      <button onclick="prevPage()">⬅ Prev</button>
+      <button onclick="nextPage()">Next ➡</button>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      Saqlain Mushtaq 2022-SE-33 (2022-2026)
+    </footer>
+
+    <script src="./scripts/javascript.js"></script>
+  </body>
+</html>
